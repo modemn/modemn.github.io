@@ -1,7 +1,66 @@
-baseURL = 'https://nikhil-modem.github.io/'
-languageCode = 'en-uk'
-title = 'Nikhil Modem'
-theme = 'PaperMod'
-[caches]
-  [caches.images]
-    dir = ':cacheDir/images'
+baseurl = "http://www.modemn.github.io"
+title = "Nikhil Modem"
+theme = "hugo-coder"
+languagecode = "en-uk"
+defaultcontentlanguage = "en"
+
+
+[pagination]
+pagerSize = 20
+
+[services]
+[services.disqus]
+shortname = "yourdiscussshortname"
+
+[markup.highlight]
+style = "github-dark"
+
+[params]
+  author = "Nikhil Modem"
+  info = "Frontend developer and badminton enthusiast"
+  description = "Nikhil Modem's personal website"
+  keywords = "blog,developer,personal"
+  avatarurl = "images/avatar.jpeg"
+
+  faviconSVG = "/img/favicon.svg"
+  favicon_32 = "/img/favicon-32x32.png"
+  favicon_16 = "/img/favicon-16x16.png"
+
+  since = 2025
+
+  enableTwemoji = true
+
+  colorScheme = "auto"
+  hidecolorschemetoggle = false
+
+  # customCSS = ["css/custom.css"]
+  # customSCSS = ["scss/custom.scss"]
+  # customJS = ["js/custom.js"]
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+# Social links
+[[params.social]]
+  name = "Github"
+  icon = "fa-brands fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/modemn/"
+[[params.social]]
+  name = "LinkedIn"
+  icon = "fa-brands fa-linkedin fa-2x"
+  weight = 2
+  url = "https://www.linkedin.com/in/nikhil-modem/"
+
+# Menu links
+[[menu.main]]
+  name = "Writing"
+  weight = 1
+  url  = "posts/"
+[[menu.main]]
+  name = "About"
+  weight = 2
+  url = "about/"
