@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Hierarchy in tables · Nikhil Modem
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Nikhil Modem">
+<meta name="description" content="Creating a new hierarchical visual formatting in html tables.">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hierarchy in tables">
+  <meta name="twitter:description" content="Creating a new hierarchical visual formatting in html tables.">
+
+<meta property="og:url" content="http://localhost:1313/posts/hierarchy-in-tables/">
+  <meta property="og:site_name" content="Nikhil Modem">
+  <meta property="og:title" content="Hierarchy in tables">
+  <meta property="og:description" content="Creating a new hierarchical visual formatting in html tables.">
+  <meta property="og:locale" content="en_uk">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-12-02T17:00:33+01:00">
+    <meta property="article:modified_time" content="2025-12-02T17:00:33+01:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/hierarchy-in-tables/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Nikhil Modem
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Writing</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/hierarchy-in-tables/">
+              Hierarchy in tables
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-12-02T17:00:33&#43;01:00">
+                December 2, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              12-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h1 id="hierarchy-in-tables">
+  Hierarchy in tables
+  <a class="heading-link" href="#hierarchy-in-tables">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="table-of-contents">
+  Table of contents
+  <a class="heading-link" href="#table-of-contents">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><a href="#introduction" >Introduction</a></li>
+<li><a href="#the-plan-of-action" >The plan of action</a></li>
+<li><a href="#data-and-its-structure" >Data and its structure</a></li>
+<li><a href="#rendering-the-table" >Rendering the table</a></li>
+</ul>
+<h2 id="introduction">
+  Introduction
+  <a class="heading-link" href="#introduction">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Systems modelling is the discipline of using models to build out complex interconnected systems in domains ranging from IT to trains, planes and automobiles. These systems are broken down into simpler <em>elements</em> which are connected through <em>relationships</em> to simulate things like their functions and architecture. These elements are usually formatted into diagrams with boxes and connecting lines which makes visualising the relationships between them easy. You may have come across UML diagrams, these are an example of how complex systems can be visualised. But elements are not always simple - they can be modelled as children of other elements, they can be parents of other elements, they can subset other elements etc. Trying to visualise all of this in a diagram can be difficult, there would be connecting lines all over the place!</p>
+<p><a href="https://www.ibm.com/products/rhapsody-systems-engineering"  class="external-link" target="_blank" rel="noopener">Rhapsody Systems Engineering</a> is a systems modelling tool from IBM that I worked on. It provided the ability to show element and their properties in structured table, but we faced the challenge of:</p>
+<blockquote>
+<h2 id="how-should-the-hierarchical-information-between-elements-be-shown-in-the-table">
+  How should the hierarchical information between elements be shown in the table?
+  <a class="heading-link" href="#how-should-the-hierarchical-information-between-elements-be-shown-in-the-table">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2></blockquote>
+<p>I was tasked with creating a new visual formatting to be applied to the rows of html tables so that hierarchy between elements can be easily understood. Traditionally, this is displayed as a tree like structure within the rows of the tables (eg. <a href="https://www.ag-grid.com/react-data-grid/tree-data/"  class="external-link" target="_blank" rel="noopener">AG Grid tree data</a>):</p>
+<p><img src="image.png" alt="AG Grid tree structure example"></p>
+<p>However in our scenario, some elements in the table needed to be displayed purely for hierarchy purposes and weren&rsquo;t actually relevant to the table data i.e. they would not be rows in the table themselves. If we went down the tree-structure route, many of the rows would be used just to display a hierarchical element which wastes vertical space.</p>
+<p>This problem gets complex when you realise there are 3 types of situations that need to be dealt with:</p>
+<ol>
+<li>Elements which are relevant to the table data and have no children. These should be displayed as rows in the table. I will refer to these are <!-- raw HTML omitted --><em>row elements</em><!-- raw HTML omitted -->.</li>
+<li>Elements that are purely for hierarchy and have children. These should not take up rows in the table. I will refer to these as <!-- raw HTML omitted --><em>non-row elements</em><!-- raw HTML omitted --></li>
+<li>Elements which are relevant to the table data but also have children. These should also be displayed as rows in the table. These are also considered <!-- raw HTML omitted --><em>row elements</em><!-- raw HTML omitted --></li>
+</ol>
+<p>And to further complicate things, for situations 2 and 3 the children could be any of the three situations themselves! With this knowledge, an example of what a table with these requirements could look like was sketched:</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->
+<img src="image-1.png" alt="example of hierarchy table"></p>
+<p>In this table, elements that have children span across rows. If they are not relevant to the table data (<!-- raw HTML omitted --><em>non-row elements</em><!-- raw HTML omitted -->), they just span the rows of their children (<code>pkg1</code>, <code>pkg2</code>, <code>pkg3</code> etc.). If they are relevant to the table data (<!-- raw HTML omitted --><em>row elements</em><!-- raw HTML omitted -->), they also get a row (<code>part2</code>, <code>partX</code>). This means a table only need as many rows as there are elements that are relevant to the table data and we don&rsquo;t have to expand a tree to understand the hierarchy of a given element, the information is all there at a glance. Perfect!</p>
+<p>Making this in a spreadsheet is all fine and dandy but when we are dealing with dynamic data with any number of relevant elements, child elements and hierarchical elements, things get difficult. Furthermore, displaying this in a regular html table adds even more complexity since we don&rsquo;t have the convenience of being able to merge cells after drawing all the table cells.</p>
+<p>Difficult, but not impossible.</p>
+<h2 id="the-plan-of-action">
+  The plan of action
+  <a class="heading-link" href="#the-plan-of-action">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>It&rsquo;s convenient now to think of the whole data structure as a tree. All leaf nodes are always <!-- raw HTML omitted --><em>row elements</em><!-- raw HTML omitted --> and other nodes can represent <!-- raw HTML omitted --><em>row elements</em><!-- raw HTML omitted --> or represent <!-- raw HTML omitted --><em>non-row elements</em><!-- raw HTML omitted -->.</p>
+<h3 id="situation-1---row-elements-with-no-children">
+  Situation 1 - Row elements with no children
+  <a class="heading-link" href="#situation-1---row-elements-with-no-children">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>These are easy. These are just rows in the table, no special treatment is really needed here. However, these could be children of other elements, we will deal with these along with the other, more special, elements next.</p>
+<h3 id="situation-2---non-row-elements-that-always-have-children">
+  Situation 2 - Non-row elements that always have children
+  <a class="heading-link" href="#situation-2---non-row-elements-that-always-have-children">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>These are also relatively easy. HTML tables allow for cells to span across multiple rows, with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement/rowSpan"  class="external-link" target="_blank" rel="noopener"><code>rowspan</code></a> property, which means these elements in the table can be rendered as we want them natively.</p>
+<p><!-- raw HTML omitted --><em>Non-row elements</em><!-- raw HTML omitted --> in the table will need to span the number of rows equal to the number of leaves it has, given a tree with the element as the root. Leaf nodes are just <!-- raw HTML omitted --><em>row elements</em><!-- raw HTML omitted --> that have no children.</p>
+<p>Here&rsquo;s a visual example to try and highlight that last point:</p>
+<p><img src="image-5.png" alt="example-tree-non-row-hierarchy-element"></p>
+<p>So going back to our example above, <code>pkg1</code> has 9 leaves when it is the root node and <code>pkg3</code> has 4. In both cases, the cell spans exactly that number of rows. Determining the number of leaves for a given node is covered a little later on in the <a href="#data-and-its-structure" >Data and it&rsquo;s structure</a> section.</p>
+<h3 id="situation-3---row-elements-with-children">
+  Situation 3 - Row elements with children
+  <a class="heading-link" href="#situation-3---row-elements-with-children">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>This is a bit more difficult. For context, we are trying to tackle elements like <code>part2</code> and <code>partX</code> in our example above. There is no native HTML table way for a cell to both span across rows <em>and</em> still be a row itself, it&rsquo;s one or the other.</p>
+<p>To achieve this, we have to hack it a bit. We add empty cells before all the row cells of the element&rsquo;s children and style the border so that it all looked like the same cell. I will call this additional empty cell a <code>spacerCell</code> from now on. So if we have some <code>part3</code> that is a child of <code>part2</code> and <code>part2</code> is also a <!-- raw HTML omitted --><em>row element</em><!-- raw HTML omitted -->, this is how a <code>spacerCell</code> would be added:</p>
+<p><img src="image-2.png" alt="add-cell-and-style-border-before"></p>
+<p>All the cells will have a border on the right and the bottom so setting the <code>border-top: none</code> on the <code>spacerCell</code> won&rsquo;t achieve the look we are going for. The bottom border for the cell above will still show up. Instead, We add a <code>::before</code> CSS element positioned at the top of the cell with an appropriate width and the same background colour as the cells to hide the borders and present it as one big cell.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#7ee787">td</span>.<span style="color:#f0883e;font-weight:bold">spacerCell</span>::<span style="color:#d2a8ff;font-weight:bold">before</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">content</span>: <span style="color:#a5d6ff">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">position</span>: <span style="color:#79c0ff">absolute</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">top</span>: <span style="color:#a5d6ff">-2</span><span style="color:#ff7b72">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">left</span>: <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">right</span>: <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">height</span>: <span style="color:#a5d6ff">4</span><span style="color:#ff7b72">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">background-color</span>: <span style="color:#d2a8ff;font-weight:bold">var</span>(<span style="color:#ff7b72;font-weight:bold">--</span><span style="color:#79c0ff">cell</span><span style="color:#ff7b72;font-weight:bold">-</span>background<span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#79c0ff">color</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">z-index</span>: <span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="image-4.png" alt="spacer-cell-highlighted"></p>
+<p><img src="image-3.png" alt="add-cell-and-style-border-after"></p>
+<h3 id="all-situations">
+  All situations
+  <a class="heading-link" href="#all-situations">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h4 id="colspans">
+  Colspans
+  <a class="heading-link" href="#colspans">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>So that&rsquo;s all the row stuff sorted, but what about the columns? Similar to the <code>rowspan</code> property, there is a <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement/colSpan"  class="external-link" target="_blank" rel="noopener"><code>colspan</code></a> property which will need setting too. In the hierarchy table sketch from earlier we can see that the rows actually span across 4 columns:</p>
+<p><img src="image-6.png" alt="rows spanning multiple columns in example"></p>
+<p>How did we get the value of 4? Well it&rsquo;s the maximum depth of the tree.</p>
+<p>Depending on how deep into the hierarchy an element is, its cell in the table will need to span a different number of columns; for example <code>part1</code> spans only 2/4 columns.</p>
+<p>Let&rsquo;s link it all back to the tree structure:</p>
+<ul>
+<li>The maximum number of columns any cell can span is the maximum depth of the tree (which happens when a row element has no children and no parents).</li>
+<li>Each element represented by an internal node will then span across the columns equal to the depth that the element is in the tree.</li>
+<li>Finally, a leaf node will span across the number of columns equal to the maximum depth minus it&rsquo;s depth (eg. <code>part1</code> will span 2 columns = max depth of 4 - its depth of 2).</li>
+</ul>
+<p><img src="image-7.png" alt="depths of tree"></p>
+<h2 id="data-and-its-structure">
+  Data and its structure
+  <a class="heading-link" href="#data-and-its-structure">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>To achieve the hierarchy format we want, we need to get some key bits of metadata about the elements in the table:</p>
+<ol>
+<li><strong>Whether the element is a <!-- raw HTML omitted --><em>row element</em><!-- raw HTML omitted --></strong>.</li>
+<li>If the element is a <!-- raw HTML omitted --><em>non-row element</em><!-- raw HTML omitted -->, then <strong>how many leaves it has</strong>. Remember, leaves are just <!-- raw HTML omitted --><em>row elements</em><!-- raw HTML omitted --> that have no children.</li>
+<li>The number of ancestors an element has. In practice we can get this information from storing the <strong>id of the parent of the element</strong>.</li>
+<li>Finally the <strong>depth</strong> of the element in the hierarchy tree.</li>
+</ol>
+<p>The data for the table came from an API and was formatted as an array of elements with the following shape:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#ff7b72">type</span> DataFromApi: <span style="color:#ff7b72">ElementHierarchy</span>[];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">type</span> ElementHierarchy <span style="color:#ff7b72;font-weight:bold">=</span> {
+</span></span><span style="display:flex;"><span>    element: <span style="color:#ff7b72">Element</span>;
+</span></span><span style="display:flex;"><span>    isRowElement?: <span style="color:#ff7b72">boolean</span>;
+</span></span><span style="display:flex;"><span>    children?: <span style="color:#ff7b72">ElementHierarchy</span>[];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>To make retrieving the data quick and efficient, a Map was generated to hold the data. The map has the following shape:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#ff7b72">type</span> HierarchyMap <span style="color:#ff7b72;font-weight:bold">=</span> Map&lt;<span style="color:#7ee787">string</span>, HierarchyMapData&gt;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">type</span> HierarchyMapData <span style="color:#ff7b72;font-weight:bold">=</span> {
+</span></span><span style="display:flex;"><span>  element: <span style="color:#ff7b72">Element</span>;
+</span></span><span style="display:flex;"><span>  isRowElement: <span style="color:#ff7b72">boolean</span>;
+</span></span><span style="display:flex;"><span>  depth: <span style="color:#ff7b72">number</span>;
+</span></span><span style="display:flex;"><span>  parentId?: <span style="color:#ff7b72">string</span>;
+</span></span><span style="display:flex;"><span>  numLeaves?: <span style="color:#ff7b72">number</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>Conveniently, the API flags whether an element is a <!-- raw HTML omitted --><em>row element</em><!-- raw HTML omitted --> or not. But the other bits of information needs to be calculated. We do this by recursively traversing the element data and filling metadata information as we go. At a high level it looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#ff7b72">const</span> generateHierarchyMap <span style="color:#ff7b72;font-weight:bold">=</span> (root: <span style="color:#ff7b72">ElementHierarchy</span>)<span style="color:#ff7b72;font-weight:bold">:</span> HierarchyMap <span style="color:#ff7b72;font-weight:bold">=&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">let</span> hierarchyMap: <span style="color:#ff7b72">HierarchyMap</span> <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">new</span> Map();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">function</span> traverse(node, depth, parentId) {
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Initialise the leaves to the number of direct children this node has that are row elements.
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    <span style="color:#ff7b72">let</span> numLeaves <span style="color:#ff7b72;font-weight:bold">=</span> node.children.filter((c) <span style="color:#ff7b72;font-weight:bold">=&gt;</span> c.isRowElement).length <span style="color:#ff7b72;font-weight:bold">||</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// If this node has children, recursively traverse them.
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    <span style="color:#8b949e;font-style:italic">// Add the number of leaves to the running total.
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    <span style="color:#ff7b72">if</span> (node.children) {
+</span></span><span style="display:flex;"><span>      node.children.forEach((child) <span style="color:#ff7b72;font-weight:bold">=&gt;</span> {
+</span></span><span style="display:flex;"><span>        numLeaves <span style="color:#ff7b72;font-weight:bold">+=</span> traverse(child, depth <span style="color:#ff7b72;font-weight:bold">+</span> <span style="color:#a5d6ff">1</span>, id);
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Set the data in the hierarchyMap
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    hierarchyMap.<span style="color:#ff7b72">set</span>(node.id, {
+</span></span><span style="display:flex;"><span>      element: <span style="color:#ff7b72">node.element</span>,
+</span></span><span style="display:flex;"><span>      isRowElement,
+</span></span><span style="display:flex;"><span>      ...(parentId <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> { parentId }), <span style="color:#8b949e;font-style:italic">// &lt;-- only set the parentId if it exists
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>      depth,
+</span></span><span style="display:flex;"><span>      ...(isRowElement <span style="color:#ff7b72;font-weight:bold">===</span> <span style="color:#79c0ff">false</span> <span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> { numLeaves }), <span style="color:#8b949e;font-style:italic">// &lt;-- only set the number of leaves if this node is a non-row element
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  root.children.forEach((child) <span style="color:#ff7b72;font-weight:bold">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    traverse(child, <span style="color:#a5d6ff">0</span>);
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">return</span> hierarchyMap;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>Cool, that&rsquo;s all our metadata done! We now have a nice hierarchy map that we can use to render our table. Let&rsquo;s now use it to actually render the table.</p>
+<h2 id="rendering-the-table">
+  Rendering the table
+  <a class="heading-link" href="#rendering-the-table">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>To render the table we iterate through each row, generate a <code>&lt;tr&gt;</code> for it and then decide on what to render to the cell depending on what the column is. There are two types of columns in the table, the special column that shows the hierarchical structure of the elements and the regular columns that show the properties of the element in that row. The regular columns will just be a <code>&lt;td&gt;</code> with the value of the property.</p>
+<p>The special column, however, is rendered by generating the right collection of sub-cells which come together to display the cell in the way we want. To do this we will recursively travel up the parent chain of each <!-- raw HTML omitted --><em>row element</em><!-- raw HTML omitted --> and add in the appropriate sub-cells. We initialise an array with a base cell, <code>&lt;td&gt;</code> with the value of the property, this cell will have a <code>colSpan</code> set to the maximum depth minus the depth of the cell as mentioned in <a href="#colspans" >Colspans</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span>&lt;<span style="color:#7ee787">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>    {rows.map((row) <span style="color:#ff7b72;font-weight:bold">=&gt;</span> (
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#7ee787">tr</span>&gt;
+</span></span><span style="display:flex;"><span>            {row.cells.map((cell) <span style="color:#ff7b72;font-weight:bold">=&gt;</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff7b72">if</span> (cell <span style="color:#ff7b72">is</span> the special column) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff7b72">const</span> HData <span style="color:#ff7b72;font-weight:bold">=</span> hierarchyMap.<span style="color:#ff7b72">get</span>(rowElement.elementId);
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff7b72">let</span> cells <span style="color:#ff7b72;font-weight:bold">=</span> [&lt;<span style="color:#7ee787">td</span> colSpan<span style="color:#ff7b72;font-weight:bold">=</span>{maxDepth <span style="color:#ff7b72;font-weight:bold">-</span> (HData<span style="color:#ff7b72;font-weight:bold">?</span>.depth <span style="color:#ff7b72;font-weight:bold">??</span> <span style="color:#a5d6ff">0</span>)}&gt;{cell.name}&lt;/<span style="color:#7ee787">td</span>&gt;];
+</span></span><span style="display:flex;"><span>                    cellIds.push(rowElement.elementId);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#8b949e;font-style:italic">// This is where we recurse up the parent chain, the cells array is passed as a reference
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>                    <span style="color:#ff7b72">const</span> spacerCount <span style="color:#ff7b72;font-weight:bold">=</span> recurseAddCells(hierarchyMap, cells, cellIds, <span style="color:#a5d6ff">0</span>, HData);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff7b72">if</span> (spacerCount <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#a5d6ff">0</span>) {
+</span></span><span style="display:flex;"><span>                        <span style="color:#ff7b72">const</span> spacerCells <span style="color:#ff7b72;font-weight:bold">=</span> Array(spacerCount).fill(&lt;<span style="color:#7ee787">td</span> className<span style="color:#ff7b72;font-weight:bold">=</span>{styles.spacerCell}&gt;<span style="color:#ff7b72;font-weight:bold">&amp;</span>nbsp;&lt;/<span style="color:#7ee787">td</span>&gt;);
+</span></span><span style="display:flex;"><span>                        cells <span style="color:#ff7b72;font-weight:bold">=</span> spacerCells.concat(cells);
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff7b72">return</span> cells;
+</span></span><span style="display:flex;"><span>                } <span style="color:#ff7b72">else</span> { <span style="color:#8b949e;font-style:italic">// otherwise, if the cell is a regular cell
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>                    <span style="color:#ff7b72">return</span> (&lt;<span style="color:#7ee787">td</span>&gt;{cell.value}&lt;/<span style="color:#7ee787">td</span>&gt;);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            })}
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#7ee787">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    ))}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#7ee787">tbody</span>&gt;
+</span></span></code></pre></div><p>As we go recurse up the parent chain, we will encounter hierarchical elements that are <!-- raw HTML omitted --><em>row elements</em><!-- raw HTML omitted --> and some that are <!-- raw HTML omitted --><em>non-row elements</em><!-- raw HTML omitted -->. For each type we prepend a <code>&lt;td&gt;</code>. Prepending is important because we want the base cell to be the last sub-cell in the array. If the hierarchical element is a <!-- raw HTML omitted --><em>row element</em><!-- raw HTML omitted -->, we assign its <code>rowSpan</code> as the number of leaves (retrieved from the hierarchy map), otherwise it&rsquo;s a <!-- raw HTML omitted --><em>non-row element</em><!-- raw HTML omitted --> and we assign it&rsquo;s <code>rowSpan</code> as 1.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#ff7b72">const</span> recurseAddCells <span style="color:#ff7b72;font-weight:bold">=</span> (HMap, cells, cellIds, spacerCount, HData) <span style="color:#ff7b72;font-weight:bold">=&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">let</span> newSpacerCount <span style="color:#ff7b72;font-weight:bold">=</span> spacerCount;
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">if</span> (HData<span style="color:#ff7b72;font-weight:bold">?</span>.parentId) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">const</span> parentData <span style="color:#ff7b72;font-weight:bold">=</span> HMap.<span style="color:#ff7b72">get</span>(HData.parentId);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> (<span style="color:#ff7b72;font-weight:bold">!</span>parentData) <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// For each ancestor this element has that is a row element, add a spacer element
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    newSpacerCount <span style="color:#ff7b72;font-weight:bold">=</span> recurseAddSpacerCells(HMap, spacerCount, parentData);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> (<span style="color:#ff7b72;font-weight:bold">!</span>cellIds.includes(parentData.element.elementId)) {
+</span></span><span style="display:flex;"><span>      cells.unshift(
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#7ee787">td</span> rowSpan<span style="color:#ff7b72;font-weight:bold">=</span>{<span style="color:#ff7b72;font-weight:bold">!</span>parentData.isRowElement <span style="color:#ff7b72;font-weight:bold">?</span> parentData.numLeaves : <span style="color:#ff7b72">1</span>}&gt;
+</span></span><span style="display:flex;"><span>          {parentData.element.name}
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#7ee787">td</span>&gt;
+</span></span><span style="display:flex;"><span>      );
+</span></span><span style="display:flex;"><span>      cellIds.push(parentData.element.elementId);
+</span></span><span style="display:flex;"><span>      recurseAddCells(
+</span></span><span style="display:flex;"><span>        HMap,
+</span></span><span style="display:flex;"><span>        cells,
+</span></span><span style="display:flex;"><span>        cellIds,
+</span></span><span style="display:flex;"><span>        newSpacerCount,
+</span></span><span style="display:flex;"><span>        parentData,
+</span></span><span style="display:flex;"><span>        isTable
+</span></span><span style="display:flex;"><span>      );
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">return</span> newSpacerCount;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>Also as we recurse, we keep track of how many spacer sub-cells we need to add to achieve the illusion of cells spanning both rows and columns that we established earlier. We sum the number of <!-- raw HTML omitted --><em>row element</em><!-- raw HTML omitted --> ancestors an element has. This is done by recursing through the hierarchy map and adding one each time we find that an element has a <code>parentId</code> and that parent element is a <!-- raw HTML omitted --><em>row element</em><!-- raw HTML omitted -->. At the end of the recursion, we prepend the spacer cells equal to our running total to the array of sub-cells.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#ff7b72">const</span> recurseAddSpacerCells <span style="color:#ff7b72;font-weight:bold">=</span> (HMap, spacerCount, nodeData) <span style="color:#ff7b72;font-weight:bold">=&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">if</span> (nodeData.isRowElement) {
+</span></span><span style="display:flex;"><span>    spacerCount<span style="color:#ff7b72;font-weight:bold">++</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">if</span> (nodeData.parentId) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">const</span> parentData <span style="color:#ff7b72;font-weight:bold">=</span> HMap.<span style="color:#ff7b72">get</span>(nodeData.parentId);
+</span></span><span style="display:flex;"><span>    spacerCount <span style="color:#ff7b72;font-weight:bold">=</span> recurseAddSpacerCells(HMap, spacerCount, parentData);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">return</span> spacerCount;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h3 id="putting-it-all-together">
+  Putting it all together
+  <a class="heading-link" href="#putting-it-all-together">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Now we have an array of sub-cells that starts with the spacer cells, followed by the ancestors of the base cell and finally the base cell itself. This is added to the row and there we go, done! Well except we do it for every row. Since a parent element with multiple children will span over multiple rows, we keep track of which parent elements we have already dealt with in an array of cellIds. If during a recursion run we find we have already handled the cellId, we don&rsquo;t need to add the sub-cells for that element again.</p>
+<p>And finally, this gives us a table that looks a little something like this:</p>
+<p><img src="image-8.png" alt="hierarchy-table-implemented"></p>
+<h2 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Now no matter the complex hierarchical relationships between elements, this method allows us to dynamically compute the table structure and display it in a simple way where users can understand where in the overall structure a certain element fits in. The method works with with basic html tables so this works anywhere that html tables work and allows us to expand to libraries that extend html tables like that of TanStack Tables. In fact, this is what we did to bring in other features like data handling, column resizing and others.</p>
+<p>I later translated all of this to work with matrix views which required the hierarchy to be shown in both rows <em>and</em> columns but that&rsquo;s a whole other post&hellip;</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+     Nikhil Modem 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
